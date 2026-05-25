@@ -3,7 +3,7 @@ import Stripe from "stripe";
 import connectToDatabase from "@/lib/mongodb";
 import { User } from "@/models/User";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_dummy_key", {
   apiVersion: "2024-04-10" as any,
 });
 
